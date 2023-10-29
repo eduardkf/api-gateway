@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: registerAccount-route
+          uri: http://localhost:8082/user/register
+          predicates:
+            - Path=/register
+        - id: loginAccount-route
+          uri: http://localhost:8082/user/login
+          predicates:
+            - Path=/login
+        - id: logout-route
+          uri: http://localhost:8082/user/logout
+          predicates:
+            - Path=/logout
+        - id: test-route
+          uri: http://localhost:8082/user/test
+          predicates:
+            - Path=/test
